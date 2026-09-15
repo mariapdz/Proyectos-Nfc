@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tu selector personal de películas aleatorias." />
+    <title>¿Qué vemos hoy?</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121b35'/%3E%3Cpath d='M17 18h30v28H17z' fill='%23ffcc57'/%3E%3Cpath d='M17 25h30M24 18v7m16-7v7M24 46v-7m16 7v-7' stroke='%23121b35' stroke-width='4'/%3E%3Ccircle cx='32' cy='33' r='5' fill='%23121b35'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="home-view" class="view" aria-labelledby="main-title">
+        <p class="eyebrow">NOCHE DE CINE</p>
+        <h1 id="main-title">¿Qué vemos hoy?</h1>
+        <p class="intro">Elige una plataforma y deja que el azar decida por ti.</p>
+        <div class="platform-grid" aria-label="Elige una plataforma">
+          <button class="platform-card disney" data-platform="disney" type="button"><span>Disney+</span><small>Magia y aventuras</small></button>
+          <button class="platform-card netflix" data-platform="netflix" type="button"><span>NETFLIX</span><small>Series, cine y más</small></button>
+          <button class="platform-card prime" data-platform="prime" type="button"><span>prime video</span><small>Para descubrir</small></button>
+        </div>
+        <p class="storage-note">Tus listas se guardan solo en este navegador.</p>
+      </section>
+
+      <section id="platform-view" class="view hidden" aria-live="polite">
+        <button id="back-button" class="back-button" type="button">← Plataformas</button>
+        <div class="platform-heading"><p class="eyebrow" id="platform-label">PLATAFORMA</p><h1 id="platform-title">Películas</h1></div>
+        <section class="draw-card" aria-labelledby="result-title">
+          <p id="result-title">La película elegida es…</p>
+          <h2 id="movie-result">Añade películas para empezar</h2>
+          <p id="result-help">Solo participan las películas de la lista «Por ver».</p>
+          <button id="draw-button" class="draw-button" type="button">Elegir una película</button>
+          <button id="redraw-button" class="text-button hidden" type="button">Volver a sortear</button>
+        </section>
+        <div class="lists-grid">
+          <section class="list-card" aria-labelledby="available-title">
+            <div class="list-title"><h2 id="available-title">Por ver</h2><span id="available-count" class="count">0</span></div>
+            <p class="hint">Estas participan en el sorteo.</p>
+            <form id="available-form" class="add-form"><label class="sr-only" for="available-input">Nueva película por ver</label><input id="available-input" required maxlength="100" placeholder="Ej. Coco" /><button type="submit">Añadir</button></form>
+            <ul id="available-list" class="movie-list"></ul>
+          </section>
+          <section class="list-card watched-card" aria-labelledby="watched-title">
+            <div class="list-title"><h2 id="watched-title">Ya vistas</h2><span id="watched-count" class="count">0</span></div>
+            <p class="hint">No entran en el sorteo.</p>
+            <form id="watched-form" class="add-form"><label class="sr-only" for="watched-input">Nueva película ya vista</label><input id="watched-input" required maxlength="100" placeholder="Ej. Del revés" /><button type="submit">Añadir</button></form>
+            <ul id="watched-list" class="movie-list"></ul>
+          </section>
+        </div>
+      </section>
+    </main>
+    <template id="movie-template"><li><span class="movie-name"></span><div class="movie-actions"><button class="move-button" type="button"></button><button class="delete-button" type="button" aria-label="Eliminar película">×</button></div></li></template>
+    <script src="script.js"></script>
+  </body>
+</html>
