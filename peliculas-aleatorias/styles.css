@@ -1,0 +1,35 @@
+/* Colores principales: puedes cambiarlos por los que más te gusten. */
+body { background-color: #f3f5f9; color: #222; font-family: Arial, sans-serif; margin: 0; }
+button, input { font-family: Arial, sans-serif; }
+button { cursor: pointer; }
+.app-shell { max-width: 900px; margin: auto; padding: 40px 20px; }
+.hidden { display: none; }
+.eyebrow { color: #555; font-size: 14px; font-weight: bold; letter-spacing: 1px; }
+h1 { color: #1b3b6f; font-size: 42px; margin: 8px 0; }
+.intro, .storage-note, .hint, .draw-card p { color: #555; }
+.platform-grid { display: flex; gap: 15px; margin: 30px 0; }
+.platform-card { border: 2px solid #ddd; border-radius: 8px; color: white; flex: 1; font-size: 22px; min-height: 150px; padding: 20px; text-align: center; }
+.platform-card small { display: block; font-size: 14px; margin-top: 12px; }
+.disney { background-color: #1769aa; }
+.netflix { background-color: #d81f26; }
+.prime { background-color: #1684c2; }
+.back-button, .text-button { background: none; border: 0; color: #1b3b6f; font-size: 16px; padding: 8px 0; }
+.platform-heading { margin: 20px 0; }
+.draw-card { background-color: white; border: 2px solid #ccd7e8; border-radius: 8px; margin-bottom: 20px; padding: 25px; text-align: center; }
+.draw-card h2 { color: #1b3b6f; font-size: 30px; margin: 12px 0; }
+.draw-button, .add-form button { background-color: #1b3b6f; border: 0; border-radius: 5px; color: white; font-weight: bold; padding: 11px 16px; }
+.text-button { display: block; margin: 8px auto; text-decoration: underline; }
+.lists-grid { display: flex; gap: 20px; }
+.list-card { background-color: white; border: 1px solid #ccd7e8; border-radius: 8px; flex: 1; padding: 20px; }
+.list-title { align-items: center; display: flex; gap: 10px; }
+.list-title h2 { color: #1b3b6f; margin: 0; }
+.count { background-color: #e2eaf5; border-radius: 12px; padding: 3px 8px; }
+.add-form { display: flex; gap: 8px; }
+.add-form input { border: 1px solid #aaa; border-radius: 5px; flex: 1; min-width: 0; padding: 10px; }
+.movie-list { list-style: none; margin: 15px 0 0; padding: 0; }
+.movie-list li { align-items: center; border-top: 1px solid #e0e0e0; display: flex; gap: 8px; justify-content: space-between; padding: 10px 0; }
+.movie-actions { display: flex; gap: 5px; }
+.movie-actions button { background-color: white; border: 1px solid #aaa; border-radius: 4px; color: #333; padding: 5px 7px; }
+.delete-button { color: #a40000 !important; }
+.sr-only { height: 1px; overflow: hidden; position: absolute; width: 1px; }
+@media (max-width: 650px) { .platform-grid, .lists-grid { flex-direction: column; } h1 { font-size: 34px; } .add-form { flex-wrap: wrap; } .add-form input, .add-form button { width: 100%; } }
