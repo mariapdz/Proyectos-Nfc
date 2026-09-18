@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d95d39" />
+    <title>Mis viajes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#/inicio" aria-label="Ir al inicio">Mis viajes</a>
+      <button class="admin-trigger" id="admin-trigger" type="button">Editar</button>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+
+    <dialog id="login-dialog" class="dialog">
+      <button class="close" id="close-login" type="button" aria-label="Cerrar">×</button>
+      <p class="eyebrow">Zona privada</p>
+      <h2>Editar recuerdos</h2>
+      <form id="login-form">
+        <label>Correo <input id="email" type="email" autocomplete="email" required /></label>
+        <label>Contraseña <input id="password" type="password" autocomplete="current-password" required /></label>
+        <p id="login-error" class="error" role="alert"></p>
+        <button class="primary" type="submit">Entrar</button>
+      </form>
+    </dialog>
+
+    <dialog id="upload-dialog" class="dialog">
+      <button class="close" id="close-upload" type="button" aria-label="Cerrar">×</button>
+      <p class="eyebrow">Añadir recuerdos</p>
+      <h2 id="upload-title">Subir fotos</h2>
+      <form id="upload-form">
+        <label class="upload-label">Fotos sueltas
+          <input id="photos-input" type="file" accept="image/*" multiple />
+        </label>
+        <label class="upload-label">Una carpeta completa
+          <input id="folder-input" type="file" accept="image/*" multiple webkitdirectory />
+        </label>
+        <p class="help">Puedes elegir muchas fotos de una vez. Se subirán al viaje actual.</p>
+        <p id="upload-status" class="error" role="status"></p>
+        <button class="primary" type="submit">Subir</button>
+      </form>
+    </dialog>
+
+    <dialog id="destination-dialog" class="dialog">
+      <button class="close" id="close-destination" type="button" aria-label="Cerrar">×</button>
+      <p class="eyebrow">Nuevo destino</p>
+      <h2>Crea un álbum</h2>
+      <form id="destination-form">
+        <label>Nombre del viaje <input id="destination-name" type="text" maxlength="60" required placeholder="Ej. Asturias" /></label>
+        <label>Una frase breve <input id="destination-subtitle" type="text" maxlength="100" required placeholder="Mar, comida y carretera" /></label>
+        <button class="primary" type="submit">Crear destino</button>
+      </form>
+    </dialog>
+
+    <dialog id="edit-destination-dialog" class="dialog">
+      <button class="close" id="close-edit-destination" type="button" aria-label="Cerrar">×</button>
+      <p class="eyebrow">Editar destino</p>
+      <h2>Los detalles del viaje</h2>
+      <form id="edit-destination-form">
+        <label>Nombre del viaje <input id="edit-destination-name" type="text" maxlength="60" required /></label>
+        <label>Una frase breve <input id="edit-destination-subtitle" type="text" maxlength="100" required /></label>
+        <label>Color del álbum
+          <select id="edit-destination-color">
+            <option value="#173c3b">Verde profundo</option>
+            <option value="#d95d39">Coral</option>
+            <option value="#e9b949">Ocre</option>
+            <option value="#7e9c7c">Verde salvia</option>
+            <option value="#b86f61">Terracota suave</option>
+          </select>
+        </label>
+        <button class="primary" type="submit">Guardar cambios</button>
+      </form>
+    </dialog>
+
+    <dialog id="photo-dialog" class="photo-dialog">
+      <button class="close photo-close" id="close-photo" type="button" aria-label="Cerrar">×</button>
+      <img id="full-photo" alt="" />
+      <button class="primary" id="download-photo" type="button">Descargar original</button>
+    </dialog>
+
+    <script src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
