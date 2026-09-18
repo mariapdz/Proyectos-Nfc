@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e96b4a" />
+    <title>Listilla de comprilla</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <p class="kicker">La compra de casa</p>
+        <h1>Listilla<br><em>de comprilla</em></h1>
+        <p class="subtitle">Pulsa lo que haga falta. Entre todos, se llena la lista.</p>
+        <div class="actions">
+          <button id="new-product" class="button ghost" type="button">+ Añadir nuevo producto</button>
+          <button id="show-list" class="button primary" type="button">Total de la lista <span id="total-count">0</span></button>
+        </div>
+      </header>
+      <section id="catalogue" aria-live="polite"></section>
+      <section id="shopping-list" hidden aria-live="polite"></section>
+    </main>
+
+    <dialog id="product-dialog">
+      <button id="close-product-dialog" class="close" type="button" aria-label="Cerrar">×</button>
+      <p class="kicker">Un producto más</p>
+      <h2>Añadir al catálogo</h2>
+      <form id="product-form">
+        <label>Emoji <input id="product-emoji" type="text" maxlength="4" value="🛒" required /></label>
+        <label>Nombre <input id="product-name" type="text" maxlength="50" placeholder="Ej. Yogures" required /></label>
+        <button class="button primary" type="submit">Crear producto</button>
+      </form>
+    </dialog>
+
+    <dialog id="edit-product-dialog">
+      <button id="close-edit-product-dialog" class="close" type="button" aria-label="Cerrar">×</button>
+      <p class="kicker">Editar producto</p>
+      <h2>Cambiar detalles</h2>
+      <form id="edit-product-form">
+        <label>Emoji <input id="edit-product-emoji" type="text" maxlength="4" required /></label>
+        <label>Nombre <input id="edit-product-name" type="text" maxlength="50" required /></label>
+        <button class="button primary" type="submit">Guardar cambios</button>
+      </form>
+    </dialog>
+
+    <dialog id="product-actions-dialog">
+      <button id="close-product-actions-dialog" class="close" type="button" aria-label="Cerrar">×</button>
+      <p class="kicker">Producto</p>
+      <h2 id="product-actions-title">Producto</h2>
+      <div class="product-actions">
+        <button id="open-edit-product" class="button ghost" type="button">Editar producto</button>
+        <button id="open-delete-product" class="button delete-action" type="button">Eliminar producto</button>
+      </div>
+    </dialog>
+
+    <dialog id="comment-dialog">
+      <button id="close-comment-dialog" class="close" type="button" aria-label="Cerrar">×</button>
+      <p class="kicker">Una nota para casa</p>
+      <h2 id="comment-title">Comentario</h2>
+      <form id="comment-form">
+        <label>Comentario <textarea id="comment-text" maxlength="160" placeholder="Ej. Sin lactosa, por favor"></textarea></label>
+        <button class="button primary" type="submit">Guardar comentario</button>
+      </form>
+    </dialog>
+
+    <script src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
